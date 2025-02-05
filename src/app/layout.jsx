@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
         />
       </head>
-      <body className="relative">
+      <body className="relative scroll-none">
         <div className="bg-green-light">
           <p className="text-gray-light py-8 text-6xl backdrop-blur-sm animate-pulse font-extrabold ml-10">
           <span className="text-red-700 capitalize animate-in">l</span>orem <span className="text-red-700 capitalize animate-in">i</span>
