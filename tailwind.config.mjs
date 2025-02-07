@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // corePlugins: {
+  //   preflight: false,  // Disable preflight globally
+  // },
   darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+      // Explicitly exclude mdx and md files from being processed
+      "./src/**/*.{mdx,md}",
   ],
   theme: {
     extend: {

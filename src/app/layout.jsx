@@ -19,7 +19,8 @@ export default function RootLayout({ children }) {
           </p>
         </div>
         <header className="sticky top-0 backdrop-blur-lg text-center z-50">
-          <nav className="grid grid-cols-6 gap-x-[1px]">
+          <nav className="grid grid-cols-7 gap-x-[1px]">
+            <NavLink href={"/mdx-page"}>mdx page</NavLink>
             <NavLink href={"/"}>home</NavLink>
             {Array.from({ length: 5 }).map((_, index) => (
               <NavLink key={index + 1} href={`/posts/${index + 1}`}>
