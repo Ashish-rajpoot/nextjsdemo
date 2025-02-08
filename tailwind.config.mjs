@@ -8,21 +8,28 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/app/**/*.{js,ts,jsx,tsx}",
-      // Explicitly exclude mdx and md files from being processed
-      "./src/**/*.{mdx,md}",
+    // Explicitly exclude mdx and md files from being processed
+    "./src/**/*.{mdx,md}",
   ],
   theme: {
     extend: {
       colors: {
         green: {
-          light: "#17364E",
+          // light: "#17364E",
           dark: "#17364E",
+          light: "#fff",
+          dark: "#fff",
         },
         gray: {
-          light: "#8b9ba7",
+          light: "#000",
+          // light: "#8b9ba7",
         },
         black: {
-          light: "#000a12",
+          light: "#000",
+          // light: "#000a12",
+        },
+        white:{
+          light:"#fff"
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -75,5 +82,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };

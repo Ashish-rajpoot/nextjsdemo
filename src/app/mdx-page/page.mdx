@@ -1,6 +1,7 @@
-<div className="mdx">
-I **love** using [Next.js](https://nextjs.org/)
+import Welcome from "./Welcome.mdx";
 
+<div className="mx-10"> 
+I **love** using [Next.js](https://nextjs.org/)
 
 # Welcome to my MDX page!
 
@@ -14,4 +15,15 @@ This is a list in markdown:
 
 Checkout my React component:
 
+hello how are you  
+ashish
+JS Variable: `let x = 1`
+
+```js
+const x = 3;
+let y = 4;
+```
+
+<Welcome />
 </div>
+export default ({children}) => <div  className = 'prose'> {children} </div>

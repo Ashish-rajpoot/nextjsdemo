@@ -5,7 +5,9 @@ export const NavLink = ({ href, children, className }) => {
   return (
     <Link
       href={href}
-      className={`bg-gray-light text-white/90 hover:bg-black-light] hover:text-black-light ${className} ${href===usePathname()? 'bg-black-light hover:text-white':''}`}
+      className={`py-3 transition-all hover:scale-105 ease-in-out duration-300 ${className} ${
+        href === usePathname() ? "font-bold" : ""
+      }`}
     >
       {children}
     </Link>

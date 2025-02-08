@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import { NavLink } from "./components/NavLink";
+import TopNav from "./components/TopNav";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -11,12 +12,9 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
         />
       </head>
-      <body className="relative scroll-none">
-        <div className="bg-green-light">
-          <p className="text-gray-light py-8 text-6xl backdrop-blur-sm animate-pulse font-extrabold ml-10">
-          <span className="text-red-700 capitalize animate-in">l</span>orem <span className="text-red-700 capitalize animate-in">i</span>
-            psum
-          </p>
+      <body className="relative scroll-none mx-10">
+        <div className="flex justify-between items-center">
+          <TopNav />
         </div>
         <header className="sticky top-0 backdrop-blur-lg text-center z-50">
           <nav className="grid grid-cols-7 gap-x-[1px]">
@@ -30,11 +28,12 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
 
-        <main className="flex justify-center items-center py-10 w-[80vw] mx-auto">
-          <div className="w-full max-w-[70vw] mx-auto">{children}</div>
+        <main className="flex justify-center items-center py-10 w-[80vw] mx-auto mb-20">
+          <div className="w-full max-w-[70vw] mx-auto min-h-screen">{children}</div>
         </main>
 
-        <footer className="bg-green-dark min-w-full fixed bottom-0 left-0 flex justify-center items-center py-5 z-50 mt-36">
+        <footer className="min-w-full flex justify-center items-center py-5 z-50 border-t">
+          {/* <footer className="min-w-full fixed bottom-0 left-0 flex justify-center items-center py-5 z-50 mt-36 backdrop-blur-lg"> */}
           <Footer />
         </footer>
       </body>
