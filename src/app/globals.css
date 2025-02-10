@@ -76,4 +76,23 @@ body {
   .scroll-none::-webkit-scrollbar {
     display: none;
   }
+  .wid {
+    width: 100%;
+  }
+}
+
+/* globals.css */
+
+/* Global styles for headings inside the MDX container */
+.mdx-container h1 {
+  @apply text-purple-600;
+}
+
+.mdx-container h1,
+.mdx-container h2,
+.mdx-container h3,
+.mdx-container h4,
+.mdx-container h5,
+.mdx-container h6 {
+  @apply dark:text-white;
 }

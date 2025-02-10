@@ -1,30 +1,46 @@
-import { CarouselDemo } from "@/app/components/CarouselDemo";
-import React from "react";
+import Heading from "@/app/component/Heading";
+import { ID, RANDOM_IMG_1200_400 } from "@/app/constants/constent";
+import { blogData } from "@/app/data/data";
+import { spliceParaInWord } from "@/app/utils/utils";
 
-const page = async ({ params }) => {
+const Page = async ({ params }) => {
   const { id } = await params;
-  const data = await fetch(`https://jsonplaceholder.org/posts/${id}`);
-  const response = await data.json();
-  const images = await Promise.all(
-    Array.from({ length: 5 }).map(
-      async (_) =>
-        await fetch(
-          `https://picsum.photos/id/${Math.ceil(Math.random() * 100)}/400/300`
-        ).then((res) => res.url)
+  const img = (
+    await fetch(
+      `https://picsum.photos/id/${Math.ceil(Math.random() * 100)}/1200/500`
     )
-  );
+  ).url;
+  const post = blogData.find((data) => data.id === id);
+
+  if (!post) {
+    return <p>Post not found</p>; // Handle case where post is not found
+  }
+
+  const arr = spliceParaInWord(post.desc, 30);
   return (
-    <div className="grid grid-cols-2 gap-10 text-justify mb-10 max-sm:grid-cols-1 ">
-      <div className="space-y-3">
-        <div className="relative">
-          <h1 className="text-2xl font-bold">{response.title}</h1>
-          <div className=" absolute min-w-full h-1 bg-green-900 rounded-lg animate-pulse"></div>
-        </div>
-        <p className="indent-14 mt-10">{response.content}</p>
+    <div className="flex bg-white-light p-5 flex-col relative min-h-fit">
+      <div className="rounded-md overflow-hidden">
+        <img src={img} alt="a" className="min-w-full" />
       </div>
-      <div className="mx-5 flex justify-center items-start max-sm:justify-center max-sm:items-center">
-        <div className="flex justify-start items-start sticky right-0 top-10 p-2">
-          <CarouselDemo images={images} />
+      <div className="min-h-full mx-16 max-md:mx-0 backdrop-blur-lg my-5">
+        <div className="pb-5">
+          <Heading className="text-4xl">
+            <span>{post.title}</span>
+          </Heading>
+          <span className="flex justify-end max-md:justify-start py-2 space-x-4 font-extralight max-md:text-xs">
+            <span>Author: {post.author}</span>
+            <span>Posted Date: {post.postedAt}</span>
+          </span>
+        </div>
+        <div className="space-y-3 text-md tracking-widest">
+          {arr.map((para, index) => (
+            <div
+              key={index}
+              className="p-2 first-letter:text-2xl first-letter:text-blue-900 first-letter:font-bold"
+            >
+              <p className="indent-5 capitalize">{para}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -32,11 +48,11 @@ const page = async ({ params }) => {
 };
 
 export async function generateStaticParams() {
-  const ids = [1, 2, 3, 4, 5];
+  const ids = blogData.map((item) => item.id);
 
   return ids.map((id) => ({
-    id: id.toString(),
+    id: encodeURIComponent(id.toString()),
   }));
 }
 
-export default page;
+export default Page;
