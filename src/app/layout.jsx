@@ -18,16 +18,16 @@ export default function RootLayout({ children }) {
             <TopNav />
           </div>
 
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        > */}
           <main className="max-w-[65vw] mx-auto py-10 relative max-sm:min-w-full max-sm:mx-0">
             {children}
           </main>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
 
           <footer className="min-w-full flex justify-center items-center py-5 z-50 border-t">
             <Footer />

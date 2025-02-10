@@ -1,5 +1,4 @@
 import { NavLink } from "./NavLink";
-import { ModeToggle } from "./ThemeButtons";
 const TopNav = () => {
   return (
     <div className="w-full flex justify-between items-center px-10 border-b-2 pb-1 mx-10 max-sm:mx-0 max-md:flex-col">
@@ -13,7 +12,7 @@ const TopNav = () => {
         <NavLink href={"/blogs"}>Blog</NavLink>
         <NavLink href={"/about"}>About</NavLink>
         <NavLink href={"/services"}>Services</NavLink>
-        <ModeToggle/>
+        {/* <ModeToggle/> */}
         {/* <MobileNav /> */}
       </div>
     </div>
