@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
         />
-        <link rel="icon" href="next.svg" type="image/x-icon" />
+        {/* <link rel="icon" href="next.svg" type="image/x-icon" /> */}
       </head>
       <body className="relative scroll-none mx-10">
           <div className="flex justify-between items-center sticky top-0 backdrop-blur-lg z-[4]">
