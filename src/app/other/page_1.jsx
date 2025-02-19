@@ -1,6 +1,6 @@
 import { CarouselDemo } from "@/app/component/CarouselDemo";
 import Heading from "@/app/component/Heading";
-import { blogData } from "@/app/data/data";
+import { blogData } from "@/data/data";
 import React from "react";
 
 const page = async ({ params }) => {

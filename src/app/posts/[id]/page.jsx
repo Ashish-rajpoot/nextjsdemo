@@ -1,7 +1,7 @@
 import Heading from "@/app/component/Heading";
-import { ID, RANDOM_IMG_1200_400 } from "@/app/constants/constent";
-import { blogData } from "@/app/data/data";
-import { spliceParaInWord } from "@/app/utils/utils";
+import { ID, RANDOM_IMG_1200_400 } from "@/constants/constent";
+import { blogData } from "@/data/data";
+import { spliceParaInWord } from "@/utils/utils";
 
 const Page = async ({ params }) => {
   const { id } = await params;

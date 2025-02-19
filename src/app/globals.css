@@ -96,3 +96,39 @@ body {
 .mdx-container h6 {
   @apply dark:text-white;
 }
+
+.labelClass{
+  @apply text-black uppercase
+}
+
+/* .formFieldDiv{
+  @apply 
+} */
+
+.formDiv{
+  @apply space-y-3
+}
+/* 
+.h1{
+  @apply text-xl underline my-4 font-bold
+}
+
+p{
+  @apply text-lg
+}
+span{
+  @apply text-lg
+}
+strong{
+  @apply text-lg font-bold
+}
+ul{
+  @apply py-5
+}
+li{
+  @apply text-lg list-disc list-outside
+}
+
+a{
+  @apply font-bold capitalize
+} */

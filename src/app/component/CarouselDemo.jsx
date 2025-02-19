@@ -1,3 +1,4 @@
+"use client"
 import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
 
@@ -8,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { random_img, RANDOM_IMG_1200_400 } from "../constants/constent";
+import { random_img, RANDOM_IMG_1200_400 } from "../../constants/constent";
 
 export const CarouselPlugin = ({ imgUrl }) => {
   const plugin = React.useRef(
@@ -34,7 +35,8 @@ export const CarouselPlugin = ({ imgUrl }) => {
               <img
                 src={random_img(1200, 500, Math.ceil(Math.random() * 100))}
                 alt="i"
-                className="rounded-lg"
+                className="rounded-lg min-w-full"
+
               />
               {/* <img src={"https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2016/03/fall-trees-road-1.jpg"} alt="i" className="rounded-lg" /> */}
             </div>

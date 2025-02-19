@@ -1,9 +1,5 @@
 import Heading from "../component/Heading";
-import {
-  ID,
-  RANDOM_IMG_1200_600,
-  WEBSITENAME
-} from "../constants/constent";
+import { ID, RANDOM_IMG_1200_600, WEBSITENAME } from "../../constants/constent";
 import About from "./About.mdx";
 
 const Page = async () => {
@@ -14,10 +10,14 @@ const Page = async () => {
         <Heading>About</Heading>
       </div>
       <div>
-        <img src={img.url} alt={ID} />
+        <img
+          src={img.url}
+          alt={ID}
+          className="min-w-full max-h-fit object-cover"
+        />
       </div>
-      <div className="text-justify dark:text-white">
-      <About websiteName={WEBSITENAME} />
+      <div className="text-justify dark:text-white px-24">
+        <About websiteName={WEBSITENAME} />
       </div>
     </div>
   );

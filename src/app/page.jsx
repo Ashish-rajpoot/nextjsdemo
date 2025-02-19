@@ -1,12 +1,19 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { CarouselPlugin } from "./component/CarouselDemo";
 import Heading from "./component/Heading";
-import { RANDOM_IMG_1200_400 } from "./constants/constent";
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
   return (
-    <>
+    <div className="max-w-[65vw] mx-auto">
       <Heading className={"py-10"}>Home Page</Heading>
       <div className="pb-10 rounded-lg overflow-hidden">
         <CarouselPlugin />
@@ -90,7 +97,7 @@ const Home = () => {
         illum inventore quas quod, saepe nemo nam, porro dicta rem vero quos
         necessitatibus.
       </div>
-    </>
+    </div>
   );
 };
 export default Home;
