@@ -1,6 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "./component/Footer";
-import { ThemeProvider } from "./component/theme-provider";
 import TopNav from "./component/TopNav";
 import "./globals.css";
 
@@ -25,11 +24,11 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         > */}
-        <main className=" mx-auto relative max-sm:min-w-full max-sm:mx-0">
-          {children}
-        </main>
-        {/* </ThemeProvider> */}
-        <Toaster />
+          <main className=" mx-auto relative max-sm:min-w-full max-sm:mx-0">
+            {children}
+          </main>
+          {/* </ThemeProvider> */}
+          <Toaster />
         <footer className="min-w-full flex justify-center items-center py-5 z-50 border-t">
           <Footer />
         </footer>

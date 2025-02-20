@@ -1,4 +1,3 @@
-"use client";
 import { blogData } from "../../data/data";
 import BlogCard_2 from "../component/BlogCard_2";
 
@@ -19,4 +18,7 @@ const BlogPage = () => {
   );
 };
 
+export async function generateStaticParams() {
+  return blogData.map((blog) => ({ id: blog.id }));
+}
 export default BlogPage;

@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "./NavLink";
 
 const BlogCard_2 = ({ blog, index }) => {
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsLoading(false);
-  });
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
   return (
     <NavLink href={`/posts/${blog.id}`} className={"group "}>
       <div className="rounded-lg grid grid-cols-12 w-full overflow-hidden bg-white text-black  ring-1">

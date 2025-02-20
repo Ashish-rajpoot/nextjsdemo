@@ -51,7 +51,7 @@ export async function generateStaticParams() {
   const ids = blogData.map((item) => item.id);
 
   return ids.map((id) => ({
-    id: encodeURIComponent(id.toString()),
+    id: id.toString(),
   }));
 }
 
