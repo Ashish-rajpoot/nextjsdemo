@@ -95,7 +95,7 @@ export const salesSchema = z.object({
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
-  category: z.string().min(require, {
+  category: z.string().min( {
     message: "Username must be at least 2 characters.",
   }),
 });
@@ -114,12 +114,12 @@ export const customerSchema = z.object({
     .max(10, { message: " phone must be 10 characters." }),
   company: z.string(),
   product: z.string({
-    required_error: "Please select an Product to display.",
+    _error: "Please select an Product to display.",
   }),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
-  category: z.string().min(require, {
+  category: z.string().min( {
     message: "Username must be at least 2 characters.",
   }),
 });
@@ -140,7 +140,7 @@ export const investorSchema = z.object({
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
-  category: z.string().min(require, {
+  category: z.string().min( {
     message: "Username must be at least 2 characters.",
   }),
 });
