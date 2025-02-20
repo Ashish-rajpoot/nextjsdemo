@@ -12,5 +12,5 @@ export const random_img = (width = 1200, height = 500, id = ID) => {
 
 
 
-export const BLOG_API = "https://sink-spending-termination-makeup.trycloudflare.com/api/blog";
-export const BLOG_IMAGE_PREFIX = "https://salesbucketbidaalprivate.s3.ap-south-1.amazonaws.com";
+export const BLOG_API = process.env.NEXT_PUBLIC_BLOG_API;
+export const BLOG_IMAGE_PREFIX = process.env.NEXT_PUBLIC_BLOG_IMAGE_PREFIX;
