@@ -21,7 +21,7 @@ const BlogPage = async ({ params }) => {
         <div className="content text max-w-[65vw] mx-auto">
           <h1 className="h1">{blog.title}</h1>
           <div
-            dangerouslySetInnerHTML={{ __html: blog.content }}
+            dangerouslySetInnerHTML={{ __html: cleanImageUrls(blog.content) }}
             className="text-lg"
           />
         </div>
@@ -39,5 +39,15 @@ export const generateStaticParams = async () => {
     slug: slug.toString(),
   }));
 };
+
+function cleanImageUrls(htmlContent) {
+  return htmlContent.replace(
+    /<img\s+[^>]*src=["']([^"']+)["']/gi,
+    (match, url) => {
+      let cleanUrl = url.split("?")[0]; // Remove query parameters
+      return match.replace(url, cleanUrl);
+    }
+  );
+}
 
 export default BlogPage;
